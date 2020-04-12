@@ -1,3 +1,5 @@
+import {PostModel} from './PostModel';
+
 export class UserModel {
   id: number;
   name: string;
@@ -5,4 +7,5 @@ export class UserModel {
   email: string;
   phone: string;
   website: string;
+  posts: PostModel[] = [];
 }
