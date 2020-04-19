@@ -1,9 +1,16 @@
+
+
+<div>
+
+  <h3>{{xxx?.id}}  {{xxx?.name}}</h3>
+  <div>{{xxx?.email}}</div>
+  <div>{{xxx?.address.city}}</div>
+
+  <hr>
+</div>
+<app-user *ngFor="let singleUser of users" [user]="singleUser" (forwardUserData)="catchUserData($event)"></app-user>
+
 <router-outlet></router-outlet>
-
-<hr>
-
-<app-user *ngFor="let singleUser of users" [user]="singleUser"></app-user>
-
 
 <!--<ul>-->
 <!--  <li *ngFor="let user of users">-->

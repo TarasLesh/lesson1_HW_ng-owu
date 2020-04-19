@@ -12,6 +12,8 @@ export class AllUsersComponent implements OnInit {
 
   users: UserModel[];
 
+  xxx: any;
+
   constructor(private activatedRoute: ActivatedRoute) {
     this.users = this.activatedRoute.snapshot.data.allUsers;
   }
@@ -19,4 +21,7 @@ export class AllUsersComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  catchUserData(user: any) {
+    this.xxx = user;
+  }
 }

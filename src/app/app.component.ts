@@ -10,7 +10,7 @@ import {UserService} from './services/user.service';
 })
 export class AppComponent implements OnInit{
   title = 'ng-owu';
-  msg = 'users';
+  msg = 'My users';
   // users: UserModel[];
 
   constructor() {
