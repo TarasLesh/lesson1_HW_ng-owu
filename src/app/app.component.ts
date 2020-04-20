@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {UserModel} from '../models/UserModel';
-import {UserService} from './services/user.service';
+import {UserService} from './user-module/services/user.service';
 
 @Component({
   selector: 'app-root',
