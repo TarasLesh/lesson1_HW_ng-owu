@@ -1,0 +1,17 @@
+<div>
+  <h4>{{comment?.id}}</h4>
+  <div>{{comment?.postId}}</div>
+  <div>{{comment?.name}}</div>
+  <div>{{comment?.email}}</div>
+  <div>{{comment?.body}}</div>
+
+  <button (click)="showPostOfComment(comment)">which post?</button>
+  <div>
+    <blockquote>{{post?.id}}</blockquote>
+    <blockquote>{{post?.title}}</blockquote>
+    <blockquote>{{post?.body}}</blockquote>
+    <blockquote>{{post?.userId}}</blockquote>
+
+  </div>
+  <hr>
+</div>
