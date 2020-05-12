@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Todo} from "./models/Todo";
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ export class AppComponent {
   //   password: 'def pass'
   // };
 
-  forma: FormGroup;
+  // forma: FormGroup;
+
 
   // password: FormControl = new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]{6,}')]);
   //
@@ -46,13 +48,34 @@ export class AppComponent {
   //   console.log(forma);
   // }
 
-  constructor(private formBuilder: FormBuilder) {
-    this.forma = formBuilder.group({
-      login: ['', [Validators.required, Validators.maxLength(10)]],
-      password: ['', [Validators.required, Validators.pattern('[a-zA-Z]{6,}')]]
-    });
-  }
+  // constructor(private formBuilder: FormBuilder) {
+  //   this.forma = formBuilder.group({
+  //     login: ['', [Validators.required, Validators.maxLength(10)]],
+  //     password: ['', [Validators.required, Validators.pattern('[a-zA-Z]{6,}')]]
+  //   });
+  // }
 
   // https://regex101.com/   generaror regulars
 
+  // @ts-ignore
+
+  form: FormGroup;
+
+  todos: Todo[] = [];
+
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      id: ['', Validators.required],
+      title: ['', Validators.required],
+      body: ['', Validators.required],
+      type: ['', Validators.required],
+    });
+  }
+
+  save() {
+    this.todos.push(this.form.value);
+  }
 }
+
+
+// <application android:usesCleartextTraffic="true" />

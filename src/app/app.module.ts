@@ -4,17 +4,19 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { TodoComponent } from './todo/todo.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    TodoComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

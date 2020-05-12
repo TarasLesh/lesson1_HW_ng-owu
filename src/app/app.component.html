@@ -18,11 +18,26 @@
 <!--  </div>-->
 <!--</form>-->
 
-<form [formGroup]="forma">
-  <div><input formControlName="login"></div>
-  <div *ngIf="forma.controls['login'].invalid">login is required</div>
-<!--  <div><input [formControl]="password"></div>-->
-  <div><input formControlName="password"></div>
-  <div *ngIf="forma.controls.password.invalid">pass is required</div>
-<!--  <button (click)="checkState(forma)" [disabled]="forma.invalid" >save</button>-->
+<!--<form [formGroup]="forma">-->
+<!--  <div><input formControlName="login"></div>-->
+<!--  <div *ngIf="forma.controls['login'].invalid">login is required</div>-->
+<!--&lt;!&ndash;  <div><input [formControl]="password"></div>&ndash;&gt;-->
+<!--  <div><input formControlName="password"></div>-->
+<!--  <div *ngIf="forma.controls.password.invalid">pass is required</div>-->
+<!--&lt;!&ndash;  <button (click)="checkState(forma)" [disabled]="forma.invalid" >save</button>&ndash;&gt;-->
+<!--</form>-->
+
+
+<form [formGroup]="form">
+  <div><input formControlName="id" type="number"></div>
+  <div><input formControlName="title"></div>
+  <div><input formControlName="body"></div>
+  <div><select formControlName="type">
+    <option value="hight">hight</option>
+    <option value="medium">medium</option>
+    <option value="low">low</option>
+  </select></div>
+  <button (click)="save()">SAVE</button>
 </form>
+
+<app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
