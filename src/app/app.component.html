@@ -1,4 +1,16 @@
 <h1>{{msg}}</h1>
+<hr>
+<h2>favorites</h2>
+<div *ngFor="let favoriteUser of favorites">
+      {{favoriteUser.id}}
+      {{favoriteUser.name}}
+      {{favoriteUser.username}}
+      {{favoriteUser.email}}
+      {{favoriteUser.phone}}
+</div>
+<button (click)="clearLS()">clear LS</button>
+<hr>
+
 
 <a routerLink="/">hello component</a>
 <br>

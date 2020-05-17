@@ -11,7 +11,9 @@ export class UserComponent {
 
   @Input()
   user: UserModel;
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+  }
 
   @Output()
   forwardUserData = new EventEmitter();
@@ -25,5 +27,23 @@ export class UserComponent {
       queryParams: {idOfUser: user.id},
       relativeTo: this.activatedRoute
     });
+  }
+
+  favotite(user: UserModel) {
+    console.log(localStorage.getItem('favorite'));
+
+    if (!localStorage.getItem('favorite')) {
+      const arr = [];
+      arr.push(user);
+
+      localStorage.setItem('favorite', JSON.stringify(arr));
+
+    } else {
+      const arrJSON = localStorage.getItem('favorite');
+      const arr = JSON.parse(arrJSON);
+      arr.push(user);
+      const value = JSON.stringify(arr);
+      localStorage.setItem('favorite', value);
+    }
   }
 }

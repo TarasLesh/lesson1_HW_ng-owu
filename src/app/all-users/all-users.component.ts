@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {UserService} from '../services/user.service';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {UserModel} from '../../models/UserModel';
 
@@ -12,7 +11,6 @@ export class AllUsersComponent implements OnInit {
 
   users: UserModel[];
 
-  xxx: any;
 
   constructor(private activatedRoute: ActivatedRoute) {
     this.users = this.activatedRoute.snapshot.data.allUsers;
@@ -21,7 +19,4 @@ export class AllUsersComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  catchUserData(user: any) {
-    this.xxx = user;
-  }
 }

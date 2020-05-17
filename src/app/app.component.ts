@@ -13,10 +13,19 @@ export class AppComponent implements OnInit{
   msg = 'My users';
   // users: UserModel[];
 
+  favorites: [any];
+  // favorites: any[];
+  // favorites: Array<any>[];
+
+
   constructor() {
       }
 
   ngOnInit(): void {
+    this.favorites = JSON.parse(localStorage.getItem('favorite'));
+  }
 
+  clearLS() {
+    localStorage.clear();
   }
 }
