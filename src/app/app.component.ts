@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Todo} from "./models/Todo";
+import {FirstChildComponent} from "./first-child/first-child.component";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import {Todo} from "./models/Todo";
     background: aqua
   }`]
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
 
   // state: { login: string, pass: string } = {
   //   login: '',
@@ -59,6 +60,12 @@ export class AppComponent {
 
   // @ts-ignore
 
+  @ViewChild('target', {static: false})
+  target;
+
+  @ViewChild(FirstChildComponent, {static: false})
+  firstChild: FirstChildComponent;
+
   form: FormGroup;
 
   todos: Todo[] = [];
@@ -70,11 +77,23 @@ export class AppComponent {
       body: ['', Validators.required],
       type: ['', Validators.required],
     });
+
+
   }
 
   save() {
     this.todos.push(this.form.value);
   }
+
+  ngAfterViewInit(): void {
+
+    console.log(this.target.nativeElement.innerText);
+
+    console.log(this.firstChild);
+    this.firstChild.hello();
+  }
+
+
 }
 
 

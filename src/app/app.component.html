@@ -41,3 +41,21 @@
 </form>
 
 <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+
+<h2>routers</h2>
+
+<!--<a routerLink="first">first</a>-->
+<!--<br>-->
+<!--<a routerLink="second">second</a>-->
+<!--<br>-->
+<!--&lt;!&ndash;<a [routerLink]="[{outlets: {primary: 'first', xxx: 'second'}}]">two outlets</a>&ndash;&gt;-->
+
+<!--<router-outlet></router-outlet>-->
+<!--<router-outlet name="xxx"></router-outlet>-->
+
+<div #target>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at reiciendis vitae. Culpa fugit itaque magni maiores
+  neque placeat provident quisquam tempore ullam voluptatibus. Explicabo illo laboriosam libero perspiciatis vero.
+</div>
+<app-first-child></app-first-child>
+<app-second-child></app-second-child>
